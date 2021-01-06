@@ -34,7 +34,7 @@ CREATE TABLE `staff` (`id_user` int(10) NOT NULL,  PRIMARY KEY (`id_user`),
 insert into referentiel(id_ref, nom_ref) values
 (1,'Développeur web et web mobile'),
 (2,'Concepteur développeur d`applications');
-
+select * from apprenant;
 
 /*Insert Competences*/
 insert into competence(id_cmptnce, id_ref, nom_cmptnce, n1, n2, n3) values
@@ -94,3 +94,15 @@ insert into utilisateur(id_user, nom_user, prenom_user, age_user, email_user, md
 insert into staff values (19),(20),(21),(22),(23),(24);
 
 select * from staff,utilisateur where staff.id_user=utilisateur.id_user and staff.id_user=19;
+
+
+   ALTER table `apprenant` 
+        add column id_cmptnce int(10), add
+		CONSTRAINT `id_cmptnce` FOREIGN KEY (`id_cmptnce`) REFERENCES `competence` (`id_cmptnce`) ON DELETE CASCADE on update CASCADE;
+/*Selection */
+select  utilisateur.nom_user,competence.nom_cmptnce,competence.n1,competence.n2,competence.n3 from utilisateur,apprenant,competence where utilisateur.id_user=apprenant.id_user and competence.id_cmptnce=apprenant.id_cmptnce and apprenant.id_cmptnce=1 and apprenant.id_user=1;
+
+/* modification*/
+update apprenant,competence SET n2=true 
+where competence.id_cmptnce=apprenant.id_cmptnce
+and apprenant.id_cmptnce=1 and apprenant.id_user=1;
