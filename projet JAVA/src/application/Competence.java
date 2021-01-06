@@ -1,6 +1,6 @@
 package application;
 
-public class Comptence{
+public class Competence{
     private final Referentiel referentiel; // Composition 
 
 	private int id_cmptnce;
@@ -9,7 +9,7 @@ public class Comptence{
 	private boolean N2;
 	private boolean N3;
 	
-	public Comptence(Referentiel referentiel, int id_cmptnce, String cmptnce, boolean n1, boolean n2, boolean n3) {
+	public Competence(Referentiel referentiel, int id_cmptnce, String cmptnce, boolean n1, boolean n2, boolean n3) {
 		super();
 		this.referentiel = referentiel;
 		this.id_cmptnce = id_cmptnce;
