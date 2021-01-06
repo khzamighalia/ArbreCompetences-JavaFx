@@ -12,7 +12,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try { 
 			//Parent root = FXMLLoader.load(getClass().getResource("Loginfxml.fxml"));
-			Parent root = FXMLLoader.load(getClass().getResource("recherche.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("competences.fxml"));
 			primaryStage.setTitle(" Arbre de compétences ");
 			primaryStage.setScene(new Scene(root));
 	        primaryStage.show();
