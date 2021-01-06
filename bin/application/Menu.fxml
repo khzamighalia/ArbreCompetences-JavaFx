@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="593.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="#504dc1" layoutX="64.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom                             ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="192.0" layoutY="236.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="229.0" style="-fx-background-color: #ffffff; -fx-border-color: rgb(255, 208, 7); -fx-border-radius: 10;" text="Développeur⋅se web et web mobile" textAlignment="CENTER" />
+      <Button layoutX="171.0" layoutY="281.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="288.0" style="-fx-background-color: #ffffff; -fx-border-color: rgb(255, 208, 7); -fx-border-radius: 10;" text="Concepteur⋅rice développeur⋅se d'applications" textAlignment="CENTER" />
+      <Text fill="DIMGRAY" layoutX="228.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="55.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profil de l'apprenant">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#504dc1" layoutX="64.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="DIMGRAY" layoutX="228.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="DIMGRAY" layoutX="228.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom@gmail.com">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="DIMGRAY" layoutX="228.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2 éme année">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#504dc1" layoutX="64.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#504dc1" layoutX="64.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Année actuelle">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
