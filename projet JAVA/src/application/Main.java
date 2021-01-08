@@ -12,6 +12,7 @@ public class Main extends Application implements Interface_User_Competence {
 	public void start(Stage primaryStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("../Interfaces/Loginfxml.fxml"));
+			//Parent root = FXMLLoader.load(getClass().getResource("../Interfaces/competences.fxml"));
 			primaryStage.setTitle("Arbre de compétences");
 			primaryStage.setScene(new Scene(root));
 			primaryStage.show();

@@ -1,7 +1,5 @@
-
-create database _Tree_
-use _Tree_
-
+ create database _Tree_
+use _Tree_  
 
 CREATE TABLE `referentiel` (`id_ref` int(11) NOT NULL, `nom_ref` varchar(255) NOT NULL,
     primary key (`id_ref`)
