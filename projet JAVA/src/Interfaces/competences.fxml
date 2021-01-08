@@ -7,7 +7,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="593.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CompetencesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="593.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.competencesController">
+
    <children>
       <Text fill="#504dc1" layoutX="64.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apprenant">
          <font>
@@ -34,6 +35,7 @@
             <Font name="System Bold" size="12.0" />
          </font></Button>
       <ComboBox id="ref_choix" fx:id="ref_choix" layoutX="224.0" layoutY="147.0" prefWidth="150.0" />
+
       <Text fill="#504dc1" layoutX="64.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Réfrentiel">
          <font>
             <Font size="14.0" />
