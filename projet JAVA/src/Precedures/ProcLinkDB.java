@@ -81,4 +81,13 @@ public class ProcLinkDB implements Interface_User_Competence {
 		}
 	}
 
-}
+	/*
+	 * public static void Valider(int id){ for (Competence competence :
+	 * lists_Competences) { try { String query =
+	 * "UPDATE `niveaux` SET `niveau`=? WHERE id_competence=? and id_user=?";
+	 * Connection con = ProcLinkDB.Connection(); PreparedStatement ps =
+	 * con.prepareStatement(query); ps.setInt(1, competence.getNiveau());
+	 * ps.setInt(2, competence.getId()); ps.setInt(3, id); ps.executeUpdate();
+	 * con.close(); } catch (SQLException e) { e.printStackTrace(); } } }
+	 */
+	}
