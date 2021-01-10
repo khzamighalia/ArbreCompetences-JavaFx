@@ -27,31 +27,35 @@ public class LoginController {
 
 	@FXML
 	private Button submitButton;
-
-
+		
+	//Click sur button login EVENT
 	public void Clicklogin(ActionEvent event) {
+		
+		// get new window
 		Window owner = submitButton.getScene().getWindow();
-		System.out.println(emailIdField.getText());
-		System.out.println(passwordField.getText());
 
+		// if email and password empty -> show error alert  
 		if (emailIdField.getText().isEmpty()) {
-			showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter your email id");
+			ProcLinkDB.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter your email id");
 			return;
 		}
 		if (passwordField.getText().isEmpty()) {
-			showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter a password");
+			ProcLinkDB.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter a password");
 			return;
 		}
+		
+		// add values of email and password to String 
 		String emailId = emailIdField.getText();
 		String password = passwordField.getText();
-
+		
+		//Get user email and password from login() class ProcLinkDB
 		Utilisateur User = ProcLinkDB.login(emailId, password);
 		try {
+			// we have User 
 			if (User != null) {
+				ProcLinkDB.infoBox("Login Successful!", null, "Failed");
 
-				
-				infoBox("Login Successful!", null, "Failed");
-
+				// open new window Competences.fxml Apprenant interface
 				Stage dialogStage = new Stage();
 				Scene scene = null;
 				Node source = (Node) event.getSource();
@@ -64,7 +68,7 @@ public class LoginController {
 					dialogStage.show();
 
 				}else {
-					
+					// open new window Recherche.fxml Staff interface
 					FXMLLoader loader = new FXMLLoader (getClass().getResource("../Interfaces/recherche.fxml"));
 					Parent root = (Parent) loader.load();
 					scene = new Scene(root);
@@ -72,27 +76,13 @@ public class LoginController {
 					dialogStage.show();
 				}
 			} else {
-				infoBox("Please enter correct Email and Password", null, "Failed");
+				// Alert if email or password not correct
+				ProcLinkDB.infoBox("Please enter correct Email and Password", null, "Failed");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public static void infoBox(String infoMessage, String headerText, String title) {
-		Alert alert = new Alert(AlertType.CONFIRMATION);
-		alert.setContentText(infoMessage);
-		alert.setTitle(title);
-		alert.setHeaderText(headerText);
-		alert.showAndWait();
-	}
-
-	private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
-		Alert alert = new Alert(alertType);
-		alert.setTitle(title);
-		alert.setHeaderText(null);
-		alert.setContentText(message);
-		alert.initOwner(owner);
-		alert.show();
-	}
+	
 }

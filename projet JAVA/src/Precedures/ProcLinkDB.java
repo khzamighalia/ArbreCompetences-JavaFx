@@ -9,6 +9,9 @@ import java.sql.Statement;
 
 import Controllers.RechercheController;
 import application.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Window;
 
 public class ProcLinkDB implements Interface_User_Competence {
 	public static int id_Session = 0;
@@ -84,22 +87,7 @@ public class ProcLinkDB implements Interface_User_Competence {
 		return user;
     }
 
-	public static void ListApprenants() {
-		try {
-			lists_Utilisateurs.clear();
-			String query = "SELECT * FROM `utilisateur` WHERE type_user='Apprenant'";
-			Connection con = ProcLinkDB.Connection();
-			PreparedStatement ps = con.prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				lists_Utilisateurs.add(new Apprenant(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(5),
-						rs.getString(7)));
-			}
-			con.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+
 
 	public static void Visualisation(int id_user) {
 		try {
@@ -117,6 +105,24 @@ public class ProcLinkDB implements Interface_User_Competence {
 			e.printStackTrace();
 		}
 	}
+	
+	// void infoBox
+		public static void infoBox(String infoMessage, String headerText, String title) {
+			Alert alert = new Alert(AlertType.CONFIRMATION);
+			alert.setContentText(infoMessage);
+			alert.setTitle(title);
+			alert.setHeaderText(headerText);
+			alert.showAndWait();
+		}
+		// void showAlert 
+		public static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
+			Alert alert = new Alert(alertType);
+			alert.setTitle(title);
+			alert.setHeaderText(null);
+			alert.setContentText(message);
+			alert.initOwner(owner);
+			alert.show();
+		}
 	
 	
 	}

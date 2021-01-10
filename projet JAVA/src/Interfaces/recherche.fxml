@@ -15,7 +15,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Button fx:id="btn_recherche" layoutX="231.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="132.0" style="-fx-background-color: #ffffff; -fx-border-color: rgb(255, 208, 7); -fx-border-radius: 10;" text="Recherche" textAlignment="CENTER" />
+      <Button fx:id="btn_recherche" layoutX="231.0" layoutY="279.0" mnemonicParsing="false" onAction="#ClickRecherche" prefHeight="30.0" prefWidth="132.0" style="-fx-background-color: #ffffff; -fx-border-color: rgb(255, 208, 7); -fx-border-radius: 10;" text="Recherche" textAlignment="CENTER" />
       <Text fx:id="Label_nomStaff" fill="DIMGRAY" layoutX="228.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
          <font>
             <Font size="14.0" />
@@ -56,6 +56,6 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField layoutX="111.0" layoutY="237.0" prefHeight="26.0" prefWidth="371.0" promptText="Entrez ID d'un apprenant" />
+      <TextField fx:id="id_Text" layoutX="111.0" layoutY="237.0" prefHeight="26.0" prefWidth="371.0" promptText="Entrez ID d'un apprenant" />
    </children>
 </AnchorPane>
