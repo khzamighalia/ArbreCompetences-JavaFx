@@ -8,10 +8,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -25,6 +27,7 @@ public class LoginController {
 
 	@FXML
 	private Button submitButton;
+
 
 	public void Clicklogin(ActionEvent event) {
 		Window owner = submitButton.getScene().getWindow();
@@ -50,20 +53,24 @@ public class LoginController {
 				infoBox("Login Successful!", null, "Failed");
 
 				Stage dialogStage = new Stage();
-				Scene scene;
+				Scene scene = null;
 				Node source = (Node) event.getSource();
 				dialogStage = (Stage) source.getScene().getWindow();
-
 				if (User.getClass() == Apprenant.class) {
-				scene = new Scene(FXMLLoader.load(getClass().getResource("../Interfaces/competences.fxml")));
-				dialogStage.setScene(scene);
-				dialogStage.show();
+					FXMLLoader loader = new FXMLLoader (getClass().getResource("../Interfaces/competences.fxml"));
+					Parent root = (Parent) loader.load();
+					scene = new Scene(root);
+					dialogStage.setScene(scene);
+					dialogStage.show();
+
 				}else {
-					scene = new Scene(FXMLLoader.load(getClass().getResource("../Interfaces/recherche.fxml")));
+					
+					FXMLLoader loader = new FXMLLoader (getClass().getResource("../Interfaces/recherche.fxml"));
+					Parent root = (Parent) loader.load();
+					scene = new Scene(root);
 					dialogStage.setScene(scene);
 					dialogStage.show();
 				}
-				
 			} else {
 				infoBox("Please enter correct Email and Password", null, "Failed");
 			}

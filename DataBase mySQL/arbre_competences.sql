@@ -28,9 +28,11 @@ CREATE TABLE `niveaau`(
 	CONSTRAINT `id_user` FOREIGN KEY (`id_user`) REFERENCES `utilisateur` (`id_user`) ON DELETE CASCADE on update CASCADE,
 	CONSTRAINT `id_cmptnce` FOREIGN KEY (`id_cmptnce`) REFERENCES `competence` (`id_cmptnce`)ON DELETE CASCADE on update CASCADE
 );
+insert into niveaau values(1,1,true,false,false);
 
-
-
+select utilisateur;
+select nom_user,prenom_user,age_user ,competence.nom_écmptnce, niveaau.*  from utilisateur,competence,niveaau  where utilisateur.id_user=niveaau.id_user and niveaau.id_cmptnce=competence.id_cmptnce and utilisateur.id_user=1;
+SELECT utilisateur.nom_user,utilisateur.prenom_user,competence.id_cmptnce,competence.nom_cmptnce,referentiel.nom_ref,niveaau.n1,niveaau.n2,niveaau.n3 from utilisateur,competence,niveaau,referentiel where utilisateur.id_user=niveaau.id_user and niveaau.id_cmptnce=competence.id_cmptnce and competence.id_ref=referentiel.id_ref and utilisateur.id_user=1;
 /*Insert Referetiel */
 insert into referentiel(id_ref, nom_ref) values
 (1,'Développeur web et web mobile'),
