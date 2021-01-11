@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 public class RechercheController {
-	public int id_Session_Apprenant=0;
+	public static int id_Session_Apprenant=1;
 	@FXML
 	private Text Label_nomStaff;
 
@@ -61,7 +61,9 @@ public class RechercheController {
 			ProcLinkDB.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter id Apprenant");
 			return;
 		}
-		//id_Session_Apprenant=id_Text.getText(arg0, arg1)		
+		id_Session_Apprenant=Integer.parseInt(id_Text.getText());	
+		
+		
 		try {
 			Stage dialogStage = new Stage();
 			Scene scene = null;

@@ -18,18 +18,33 @@ CREATE TABLE `competence` ( `id_cmptnce` int(11) NOT NULL, `id_ref` int(11) NOT 
     primary key (`id_cmptnce`),
 	CONSTRAINT `id_ref` FOREIGN KEY (`id_ref`) REFERENCES `referentiel` (`id_ref`) ON DELETE CASCADE on update CASCADE
 );
+
 CREATE TABLE `niveaau`(
    `id_user` int NOT NULL,
    `id_cmptnce` int NOT NULL,
-   `n1` boolean default false,
-   `n2` boolean default false,
-   `n3` boolean default false,
+   niveau int,
 	PRIMARY KEY (id_user, id_cmptnce),
+    UNIQUE INDEX (id_user, id_cmptnce),
 	CONSTRAINT `id_user` FOREIGN KEY (`id_user`) REFERENCES `utilisateur` (`id_user`) ON DELETE CASCADE on update CASCADE,
 	CONSTRAINT `id_cmptnce` FOREIGN KEY (`id_cmptnce`) REFERENCES `competence` (`id_cmptnce`)ON DELETE CASCADE on update CASCADE
 );
-insert into niveaau values(1,1,true,false,false);
 
+
+SELECT utilisateur.nom_user,utilisateur.prenom_user,competence.id_cmptnce,competence.nom_cmptnce,referentiel.nom_ref,niveaau.niveau 
+from utilisateur,competence,niveaau,referentiel
+where utilisateur.id_user=niveaau.id_user 
+and niveaau.id_cmptnce=competence.id_cmptnce 
+and competence.id_ref=referentiel.id_ref 
+and utilisateur.id_user=1;
+
+
+SELECT referentiel.id_ref,referentiel.nom_ref,competence.id_cmptnce,competence.nom_cmptnce,niveaau.niveau from utilisateur,competence,niveaau,referentiel
+where utilisateur.id_user=niveaau.id_user 
+and niveaau.id_cmptnce=competence.id_cmptnce 
+and competence.id_ref=referentiel.id_ref and utilisateur.id_user=1;
+
+update niveaau set niveau=3 where niveaau.id_user=1 and niveaau.id_cmptnce=1;
+	
 select utilisateur;
 select nom_user,prenom_user,age_user ,competence.nom_écmptnce, niveaau.*  from utilisateur,competence,niveaau  where utilisateur.id_user=niveaau.id_user and niveaau.id_cmptnce=competence.id_cmptnce and utilisateur.id_user=1;
 SELECT utilisateur.nom_user,utilisateur.prenom_user,competence.id_cmptnce,competence.nom_cmptnce,referentiel.nom_ref,niveaau.n1,niveaau.n2,niveaau.n3 from utilisateur,competence,niveaau,referentiel where utilisateur.id_user=niveaau.id_user and niveaau.id_cmptnce=competence.id_cmptnce and competence.id_ref=referentiel.id_ref and utilisateur.id_user=1;
@@ -96,9 +111,6 @@ insert into utilisateur(id_user, nom_user, prenom_user, age_user, email_user, md
 
 select * from staff,utilisateur where staff.id_user=utilisateur.id_user and staff.id_user=19;
 
-
-/*Selection */
-select  utilisateur.nom_user,competence.nom_cmptnce,competence.n1,competence.n2,competence.n3 from utilisateur,apprenant,competence where utilisateur.id_user=apprenant.id_user and competence.id_cmptnce=apprenant.id_cmptnce and apprenant.id_cmptnce=1 and apprenant.id_user=1;
 
 /* modification*/
 update apprenant,competence SET n2=true 

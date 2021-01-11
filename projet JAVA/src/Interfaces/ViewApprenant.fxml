@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="593.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="593.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ViewApprenantController">
    <children>
-      <Text fill="#504dc1" layoutX="64.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+      <Text fill="#504dc1" layoutX="74.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Button layoutX="192.0" layoutY="236.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="229.0" style="-fx-background-color: #ffffff; -fx-border-color: rgb(255, 208, 7); -fx-border-radius: 10;" text="Développeur⋅se web et web mobile" textAlignment="CENTER" />
-      <Button layoutX="171.0" layoutY="281.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="288.0" style="-fx-background-color: #ffffff; -fx-border-color: rgb(255, 208, 7); -fx-border-radius: 10;" text="Concepteur⋅rice développeur⋅se d'applications" textAlignment="CENTER" />
-      <Text fill="DIMGRAY" layoutX="228.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+      <Text fx:id="nom_Apprenant" fill="DIMGRAY" layoutX="129.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
          <font>
             <Font size="14.0" />
          </font>
@@ -24,35 +23,34 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Text fill="#504dc1" layoutX="64.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom">
+      <Text fill="#504dc1" layoutX="352.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="DIMGRAY" layoutX="228.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom">
+      <Text fx:id="prenom_Apprenant" fill="DIMGRAY" layoutX="429.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="DIMGRAY" layoutX="228.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom@gmail.com">
+      <Text fx:id="email_Apprenant" fill="DIMGRAY" layoutX="129.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom@gmail.com">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="DIMGRAY" layoutX="228.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2 éme année">
+      <Text fill="#504dc1" layoutX="74.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="#504dc1" layoutX="64.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <Text fill="#504dc1" layoutX="64.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Année actuelle">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
+      <TableView fx:id="Table_view" layoutX="27.0" layoutY="164.0" prefHeight="165.0" prefWidth="548.0">
+        <columns>
+          <TableColumn fx:id="TestViewColumn" prefWidth="52.000003814697266" text="Id Ref" />
+          <TableColumn minWidth="7.20001220703125" prefWidth="182.40000915527344" text="Referentiel" />
+            <TableColumn prefWidth="70.39996337890625" text="Id Cmpt" />
+            <TableColumn prefWidth="185.60003662109375" text="Nom Cmptnce" />
+            <TableColumn prefWidth="61.59991455078125" text="Niveau" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
