@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import application.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Window;
@@ -15,6 +17,7 @@ import javafx.stage.Window;
 public class ProcLinkDB implements Interface_User_Competence {
 
 	public static int id_Session = 0;
+	private static Referentiel ref;
 
 	// Open connection with database _Tree_
 	public static Connection Connection() {
@@ -86,6 +89,7 @@ public class ProcLinkDB implements Interface_User_Competence {
 		return user;
 	}
 
+
 	// get Apprenant info's
 	public static Competence Visualisation(int id_user) {
 		Competence cmp = null;
@@ -105,7 +109,36 @@ public class ProcLinkDB implements Interface_User_Competence {
 		}
 		return cmp;
 	}
+	
+	
+	//Get Ref Info
+	
+	public static Referentiel Referance() {
+		
+		Referentiel stat = null;
 
+        try {
+
+            String query = "select * from referentiel";
+			Connection con = ProcLinkDB.Connection();
+            PreparedStatement statement = con.prepareStatement(query);
+			ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                stat = new Referentiel(rs.getInt(1), rs.getString(2));
+
+            }
+
+            con.close();
+
+        } catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return stat;
+    }
+	
+	
+	
 	// void infoBox
 	public static void infoBox(String infoMessage, String headerText, String title) {
 		Alert alert = new Alert(AlertType.CONFIRMATION);

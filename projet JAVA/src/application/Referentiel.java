@@ -10,7 +10,9 @@ public class Referentiel {
 		this.id_Ref = id_Ref;
 		this.nom_ref = nom_ref;
 	}
+	public Referentiel() {
 
+	}
 	public int getId_Ref() {
 		return id_Ref;
 	}

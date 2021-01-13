@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="593.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ViewApprenantController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="593.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ViewApprenantController">
    <children>
       <Text fill="#504dc1" layoutX="74.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
          <font>
@@ -43,7 +43,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TableView fx:id="Table_view" layoutX="27.0" layoutY="164.0" prefHeight="165.0" prefWidth="548.0">
+      <TableView fx:id="Table_view" layoutX="23.0" layoutY="219.0" prefHeight="165.0" prefWidth="548.0">
         <columns>
           <TableColumn fx:id="TestViewColumn" prefWidth="52.000003814697266" text="Id Ref" />
           <TableColumn minWidth="7.20001220703125" prefWidth="182.40000915527344" text="Referentiel" />
@@ -52,5 +52,55 @@
             <TableColumn prefWidth="61.59991455078125" text="Niveau" />
         </columns>
       </TableView>
+      <Text layoutX="35.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id Ref">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="134.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Referentiel">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="268.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id Cmpt">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="375.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom cmptnce">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="511.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Niveau">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="txt_idRef" fill="DIMGRAY" layoutX="37.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="idRef">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="txt_ref" fill="DIMGRAY" layoutX="92.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Referentiel">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="txt_idcmpt" fill="DIMGRAY" layoutX="276.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="idCmpt">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="txt_cmpt" fill="DIMGRAY" layoutX="347.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="competence">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="txt_nv" fill="DIMGRAY" layoutX="540.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="niveau">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

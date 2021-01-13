@@ -15,7 +15,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="DIMGRAY" layoutX="228.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom prénom">
+      <Text fx:id="Label_NomApprenant" fill="DIMGRAY" layoutX="228.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ici">
          <font>
             <Font size="14.0" />
          </font>
@@ -25,7 +25,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="DIMGRAY" layoutX="228.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom">
+      <Text fx:id="Label_NomStaff" fill="DIMGRAY" layoutX="228.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DD">
          <font>
             <Font size="14.0" />
          </font>
@@ -130,6 +130,5 @@
             <Text layoutX="14.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C1. Maquetter une application" />
          </children>
       </Pane>
-      <Text id="Label" fx:id="label" layoutX="143.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Label" />
    </children>
 </AnchorPane>
