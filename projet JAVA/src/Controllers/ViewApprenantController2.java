@@ -6,12 +6,13 @@ import application.Utilisateur;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 
-public class ViewApprenantController {
+public class ViewApprenantController2 {
 
     @FXML
     private Text nom_Apprenant;
@@ -37,6 +38,9 @@ public class ViewApprenantController {
     @FXML
     private TableColumn<Competence, Integer> niveaut;
     
+    @FXML
+    private TableColumn<Competence,Button> actiont;
+    
 
    
     
@@ -49,15 +53,16 @@ public class ViewApprenantController {
 
 		if (User != null  ) {
 			// get Staff info's 
-			Utilisateur apprenant = ProcLinkDB.getUser(RechercheController.id_Session_Apprenant);
+			Utilisateur apprenant = ProcLinkDB.getUser(ProcLinkDB.id_Session);
 			nom_Apprenant.setText(apprenant.getNom_user());
 			prenom_Apprenant.setText(apprenant.getPrenom_user());
 			email_Apprenant.setText(apprenant.getEmail_user());
-			cmp=ProcLinkDB.getCompetence(RechercheController.id_Session_Apprenant);
+			cmp=ProcLinkDB.getCompetence(ProcLinkDB.id_Session);
 			ref.setText(cmp.get(0).getNom_ref());
 			competencet.setCellValueFactory(new PropertyValueFactory<Competence,String>("nom_cmptnce")
 				);
 			niveaut.setCellValueFactory(new PropertyValueFactory<Competence,Integer>("niveau"));
+			actiont.setCellValueFactory(new PropertyValueFactory<Competence,Button>("plus"));
 			Table_view.setItems(cmp);
 			//}
 				

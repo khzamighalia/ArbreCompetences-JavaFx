@@ -17,14 +17,14 @@ import javafx.stage.Window;
 public class ProcLinkDB implements Interface_User_Competence {
 
 	public static int id_Session = 0;
-	private static Referentiel ref;
+	//private static Referentiel ref;
 
 	// Open connection with database _Tree_
 	public static Connection Connection() {
 		Connection con = null;
 		try {
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:8000/_Tree_?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC",
+					"jdbc:mysql://localhost:8000/_Tree_",
 					"root", "admin");
 		} catch (Exception e) {
 			System.out.println(e);
@@ -158,4 +158,25 @@ public class ProcLinkDB implements Interface_User_Competence {
 		alert.show();
 	}
 
+	
+	// get competence info's
+			public static ObservableList<Competence> getCompetence(int id_User) {
+				ObservableList<Competence> cmp = FXCollections.observableArrayList();
+
+
+				try {
+					String query = "SELECT referentiel.id_ref,referentiel.nom_ref,competence.id_cmptnce,competence.nom_cmptnce,niveaau.niveau from utilisateur,competence,niveaau,referentiel where utilisateur.id_user=niveaau.id_user and niveaau.id_cmptnce=competence.id_cmptnce and competence.id_ref=referentiel.id_ref and utilisateur.id_user=" + id_User;
+					Connection con = ProcLinkDB.Connection();
+					Statement stmt = con.createStatement();
+					ResultSet rs = stmt.executeQuery(query);
+					while (rs.next()) {
+						 cmp.add(new Competence(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getInt(5)));
+					}
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				return cmp;
+			}
+	
 }

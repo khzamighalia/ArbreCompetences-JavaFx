@@ -1,10 +1,13 @@
 package application;
 
+import javafx.scene.control.Button;
+
 public class Competence extends Referentiel {
 
 	private int id_cmptnce;
 	private String nom_cmptnce;
 	private int niveau;
+	private Button plus;
 	public Competence(int id_Ref, String nom_ref) {
 		super(id_Ref, nom_ref);
 		// TODO Auto-generated constructor stub
@@ -14,6 +17,7 @@ public class Competence extends Referentiel {
 		this.id_cmptnce = id_cmptnce;
 		this.nom_cmptnce = nom_cmptnce;
 		this.niveau = niveau;
+		this.plus=new Button("Add niveau");
 	}
 	public int getId_cmptnce() {
 		return id_cmptnce;
@@ -32,6 +36,12 @@ public class Competence extends Referentiel {
 	}
 	public void setNiveau(int niveau) {
 		this.niveau = niveau;
+	}
+	public Button getButtonP() {
+		return plus;
+	}
+	public void setButtonP(Button plus) {
+		this.plus = plus;
 	}
 	
 }

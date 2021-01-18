@@ -61,7 +61,7 @@ public class LoginController {
 				Node source = (Node) event.getSource();
 				dialogStage = (Stage) source.getScene().getWindow();
 				if (User.getClass() == Apprenant.class) {
-					FXMLLoader loader = new FXMLLoader (getClass().getResource("../Interfaces/competences.fxml"));
+					FXMLLoader loader = new FXMLLoader (getClass().getResource("../Interfaces/ViewApprenant2.fxml"));
 					Parent root = (Parent) loader.load();
 					scene = new Scene(root);
 					dialogStage.setScene(scene);
