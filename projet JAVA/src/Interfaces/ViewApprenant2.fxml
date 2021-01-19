@@ -47,7 +47,7 @@
         <columns>
             <TableColumn fx:id="competencet" prefWidth="326.6666564941406" text="Compétence" />
             <TableColumn fx:id="niveaut" prefWidth="104.0" text="Niveau" />
-            <TableColumn fx:id="actiont" prefWidth="75.0" text="Action" />
+            <TableColumn id="actiont" fx:id="actiont" prefWidth="75.0" text="Action" />
         </columns>
       </TableView>
       <Text fx:id="referentiel" fill="#504dc1" layoutX="74.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Réferentiel">

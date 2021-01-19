@@ -25,7 +25,7 @@ public class ProcLinkDB implements Interface_User_Competence {
 		try {
 			con = DriverManager.getConnection(
 					"jdbc:mysql://localhost:8000/_Tree_",
-					"root", "admin");
+					"root", "root");
 		} catch (Exception e) {
 			System.out.println(e);
 		}

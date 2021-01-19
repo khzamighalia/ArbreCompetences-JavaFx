@@ -39,7 +39,7 @@ public class ViewApprenantController2 {
     private TableColumn<Competence, Integer> niveaut;
     
     @FXML
-    private TableColumn<Competence,Button> actiont;
+    private TableColumn<Competence,String> actiont;
     
 
    
@@ -62,7 +62,7 @@ public class ViewApprenantController2 {
 			competencet.setCellValueFactory(new PropertyValueFactory<Competence,String>("nom_cmptnce")
 				);
 			niveaut.setCellValueFactory(new PropertyValueFactory<Competence,Integer>("niveau"));
-			actiont.setCellValueFactory(new PropertyValueFactory<Competence,Button>("plus"));
+			actiont.setCellValueFactory(new PropertyValueFactory<Competence,String>("getButtonInc()"));
 			Table_view.setItems(cmp);
 			//}
 				

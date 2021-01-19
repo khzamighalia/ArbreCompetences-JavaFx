@@ -7,7 +7,7 @@ public class Competence extends Referentiel {
 	private int id_cmptnce;
 	private String nom_cmptnce;
 	private int niveau;
-	private Button plus;
+	private Button Inc;
 	public Competence(int id_Ref, String nom_ref) {
 		super(id_Ref, nom_ref);
 		// TODO Auto-generated constructor stub
@@ -17,7 +17,8 @@ public class Competence extends Referentiel {
 		this.id_cmptnce = id_cmptnce;
 		this.nom_cmptnce = nom_cmptnce;
 		this.niveau = niveau;
-		this.plus=new Button("Add niveau");
+		this.Inc=new Button(" + ");
+
 	}
 	public int getId_cmptnce() {
 		return id_cmptnce;
@@ -37,11 +38,11 @@ public class Competence extends Referentiel {
 	public void setNiveau(int niveau) {
 		this.niveau = niveau;
 	}
-	public Button getButtonP() {
-		return plus;
+	public Button getButtonInc() {
+		return Inc;
 	}
-	public void setButtonP(Button plus) {
-		this.plus = plus;
+	public void setButtonInc(Button Inc) {
+		this.Inc = Inc;
 	}
-	
+
 }
