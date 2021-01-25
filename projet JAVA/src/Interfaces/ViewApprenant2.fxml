@@ -45,9 +45,11 @@
       </Text>
       <TableView fx:id="Table_view" layoutX="41.0" layoutY="179.0" prefHeight="319.0" prefWidth="508.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="179.0">
         <columns>
-            <TableColumn fx:id="competencet" prefWidth="326.6666564941406" text="Compétence" />
-            <TableColumn fx:id="niveaut" prefWidth="104.0" text="Niveau" />
-            <TableColumn id="actiont" fx:id="actiont" prefWidth="75.0" text="Action" />
+            <TableColumn fx:id="competencet" prefWidth="234.66665649414062" text="Compétence" />
+            <TableColumn fx:id="niveaut" prefWidth="46.0" text="Niveau" />
+            <TableColumn id="actiont" fx:id="actionInc" prefWidth="57.33331298828125" text="Incrémenter" />
+            <TableColumn fx:id="actionDec" prefWidth="52.0" text="Décrementer" />
+            <TableColumn fx:id="etatcmp" prefWidth="117.3333740234375" text="Etat" />
         </columns>
       </TableView>
       <Text fx:id="referentiel" fill="#504dc1" layoutX="74.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Réferentiel">

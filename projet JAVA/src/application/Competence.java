@@ -8,6 +8,7 @@ public class Competence extends Referentiel {
 	private String nom_cmptnce;
 	private int niveau;
 	private Button Inc;
+	private Button Dec;
 	public Competence(int id_Ref, String nom_ref) {
 		super(id_Ref, nom_ref);
 		// TODO Auto-generated constructor stub
@@ -18,6 +19,7 @@ public class Competence extends Referentiel {
 		this.nom_cmptnce = nom_cmptnce;
 		this.niveau = niveau;
 		this.Inc=new Button(" + ");
+		this.Dec=new Button(" - ");
 
 	}
 	public int getId_cmptnce() {
@@ -43,6 +45,13 @@ public class Competence extends Referentiel {
 	}
 	public void setButtonInc(Button Inc) {
 		this.Inc = Inc;
+	}
+	
+	public Button getButtonDec() {
+		return Dec;
+	}
+	public void setButtonDec(Button Dec) {
+		this.Dec = Dec;
 	}
 
 }

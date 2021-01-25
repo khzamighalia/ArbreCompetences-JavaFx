@@ -13,6 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 
 public class ViewApprenantController2 {
+	
 
     @FXML
     private Text nom_Apprenant;
@@ -25,9 +26,9 @@ public class ViewApprenantController2 {
     @FXML
     private Text referentiel;
 
+
     @FXML
     private Text ref;
-
 
     @FXML
     private TableView<Competence> Table_view;
@@ -39,10 +40,21 @@ public class ViewApprenantController2 {
     private TableColumn<Competence, Integer> niveaut;
     
     @FXML
-    private TableColumn<Competence,String> actiont;
+    private TableColumn<Competence,String> actionInc;
     
+    @FXML
+    private TableColumn<Competence,String> actionDec;
+    
+    @FXML
+    private TableColumn<Competence,String> etatCmp;
+    
+    @FXML
+    private Button ButtonInc;
+    
+    
+    @FXML
+    private Button ButtonDec;
 
-   
     
     @FXML
 	public void initialize() {
@@ -62,16 +74,19 @@ public class ViewApprenantController2 {
 			competencet.setCellValueFactory(new PropertyValueFactory<Competence,String>("nom_cmptnce")
 				);
 			niveaut.setCellValueFactory(new PropertyValueFactory<Competence,Integer>("niveau"));
-			actiont.setCellValueFactory(new PropertyValueFactory<Competence,String>("getButtonInc()"));
+			actionInc.setCellValueFactory(new PropertyValueFactory<Competence,String>("ButtonInc"));
+			actionDec.setCellValueFactory(new PropertyValueFactory<Competence,String>("ButtonDec"));
 			Table_view.setItems(cmp);
-			//}
+			
 				
 
 		} else {
 			System.out.println("Erreur");
 		}
 
-	}
+
+    
+    }
 
 
 }
